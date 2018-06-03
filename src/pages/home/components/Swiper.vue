@@ -13,14 +13,13 @@
 <script>
 export default {
   name: 'HomeSwiper',
-  data() {
-      return {
-          swiperOption: {}
-      }
+  data () {
+    return {
+      swiperOption: {}
+    }
   }
-}    
+}
 </script>
-<style lang="styles" scoped>
+<style lang="stylus" scoped>
 
 </style>
-
