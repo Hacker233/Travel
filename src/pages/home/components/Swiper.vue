@@ -1,18 +1,19 @@
 <template>
-<div class="wrapper">
-    <swiper :options="swiperOption" v-if="showSwiper">
-        <swiper-slide v-for="item of list" :key="item.id">
-            <img class="swiper-img" :src="item.imgUrl">
-        </swiper-slide>
-        <div class="swiper-pagination"  slot="pagination"></div>
-  </swiper>
-</div>
+    <div class="wrapper">
+        <swiper :options="swiperOption" v-if="showSwiper">
+            <swiper-slide v-for="item of list" :key="item.id">
+                <img class="swiper-img" :src="item.imgUrl" alt="">
+            </swiper-slide>
+            <div class="swiper-pagination"  slot="pagination"></div>
+        </swiper>
+    </div>
 </template>
+
 <script>
 export default {
   name: 'HomeSwiper',
   props: {
-    list: Array
+      list: Array
   },
   data () {
     return {
@@ -23,21 +24,24 @@ export default {
     }
   },
   computed: {
-    showSwiper () {
-      return this.list.length
-    }
-  }
+      showSwiper: function(){
+          return this.list.length
+      }
+  },
 }
 </script>
+
 <style lang="stylus" scoped>
-.wrapper >>> .swiper-pagination-bullet-active
-    background-color #ffffff
-.wrapper
+  .wrapper >>> .swiper-pagination-bullet-active
+    background #ffffff
+  .wrapper >>> .swiper-pagination-bullets
+    bottom 5px
+  .wrapper
     width 100%
     height 0
     overflow hidden
-    padding-bottom 31.25%
-    background-color #eee
+    padding-bottom 27%
+    background #eeeeee
     .swiper-img
-        width 100%
+      width 100%
 </style>
